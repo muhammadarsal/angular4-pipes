@@ -1,7 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+/*
+  By default pipes are pure. It means that whenever the data changes,
+  pipe doesn't get recalculated for the new data. To force this recalculation
+  of pipe for the new data, set the pure property to false (though this 
+  might cost performance).
+*/
 @Pipe({
-  name: 'filter'
+  name: 'filter',
+  pure: false
 })
 export class FilterPipe implements PipeTransform {
 
